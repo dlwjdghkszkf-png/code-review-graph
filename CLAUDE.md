@@ -17,10 +17,10 @@ When using code-review-graph MCP tools, follow these rules:
 - **Core Package**: `code_review_graph/` (Python 3.10+)
   - `parser.py` — Tree-sitter multi-language AST parser (20 languages including Vue SFC, Solidity, Dart, R, Perl, Lua, Nix + Jupyter/Databricks notebooks)
   - `graph.py` — SQLite-backed graph store (nodes, edges, BFS impact analysis)
-  - `tools.py` — 22 MCP tool implementations
-  - `main.py` — FastMCP server entry point (stdio transport), registers 22 tools + 5 prompts
+  - `tools/` — 30 MCP tool implementations (split across build/query/context/review/flows/community/analysis/refactor/docs/registry modules)
+  - `main.py` — FastMCP server entry point (stdio + streamable-http transport), registers 30 tools + 5 prompts
   - `incremental.py` — Git-based change detection, file watching
-  - `embeddings.py` — Optional vector embeddings (Local sentence-transformers, Google Gemini, MiniMax)
+  - `embeddings.py` — Optional vector embeddings (Local sentence-transformers, OpenAI-compatible, Google Gemini, MiniMax)
   - `visualization.py` — D3.js interactive HTML graph generator
   - `cli.py` — CLI entry point (install, build, update, watch, status, visualize, serve, wiki, detect-changes, register, unregister, repos, eval)
   - `flows.py` — Execution flow detection and criticality scoring
